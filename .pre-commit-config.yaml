@@ -1,0 +1,49 @@
+exclude: |
+  (?x)^(
+    external/.*|
+    services/.*
+  )
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    # - id: trailing-whitespace
+    - id: end-of-file-fixer
+#     - id: check-json
+#     - id: check-yaml
+#     - id: pretty-format-json
+#     exclude: \.ipy(n|nb)$
+#     args: ["--autofix", "--indent=2", "--no-sort-keys"]
+
+#   - repo: local
+#     hooks:
+#       - id: jupyter-nb-clear-output
+#         name: Clean Jupyter
+#         description: Clear output from Jupyter notebooks.
+#         files: \.ipynb$
+#         stages: [commit]
+#         language: system
+#         entry: jupyter nbconvert --clear-output
+
+#   - repo: https://github.com/PyCQA/isort
+#     rev: 5.12.0
+#     hooks:
+#       - id: isort
+
+#   - repo: https://github.com/psf/black
+#     rev: 23.7.0
+#     hooks:
+#       - id: black
+
+#   # - repo: https://github.com/PyCQA/flake8
+#   #   rev: 6.0.0
+#   #   hooks:
+#   #     - id: flake8
+#   #       additional_dependencies:
+#   #         - flake8-black
+#   #       exclude: .git,__pycache__,build,dist
+
+#   # - repo: https://github.com/hhatto/autopep8
+#   #   rev: v2.3.1
+#   #   hooks:
+#   #   -   id: autopep8
