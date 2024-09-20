@@ -2,7 +2,7 @@ import re
 
 import requests
 from bs4 import BeautifulSoup
-from helpers import get_generation
+from poke_sprite_dataset.scrape.helpers import get_generation
 
 POKETYPES = [
     "Normal",

@@ -4,11 +4,11 @@ import re
 
 import requests
 from bs4 import BeautifulSoup
-from helpers import save_image
-from pages import load_homepage, load_pokemon_page
-from scrape_poke_api import get_pokemon_from_pokeapi
+from poke_sprite_dataset.scrape.helpers import save_image
+from poke_sprite_dataset.scrape.pages import load_homepage, load_pokemon_page
+from poke_sprite_dataset.scrape.scrape_poke_api import get_pokemon_from_pokeapi
 from tqdm.auto import tqdm
-from unwrap_animated_sprites import unwrap_sprite
+from poke_sprite_dataset.scrape.unwrap_animated_sprites import unwrap_sprite
 
 BASE_URL = "https://bulbapedia.bulbagarden.net"
 LANDING = "/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number"

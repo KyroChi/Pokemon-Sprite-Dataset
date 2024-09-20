@@ -9,6 +9,11 @@ Note that all of the sprites are owned by Nintendo... so use at your own risk!
 ## Getting Started
 Clone the repo and then run
 ```
+conda env create -f environment.yml 
+conda activate poke_sprite_dataset
+```
+to set up the conda environment, and run 
+```
 python setup.py install
 ```
 to install as a module.
