@@ -101,7 +101,7 @@ def load_pokemon_page(base_url, pokemon):
         except:
             print(f"Failed to find full size image for {pokemon['name']} at {wiki_url}")
             return_data["full_size"] = None
-
+ 
         pattern = re.compile(r"/wiki/File:Spr_5b_.*")
         matches = soup.find_all("a", href=pattern)
 

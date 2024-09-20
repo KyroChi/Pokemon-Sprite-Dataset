@@ -7,6 +7,8 @@ from PIL import Image
 from torch.utils.data import Dataset
 from torchvision.transforms import Resize, ToTensor
 
+from helpers import white_background
+
 TYPE_TO_INT_MAP = {
     "normal": 0,
     "fighting": 1,
@@ -108,7 +110,8 @@ def parse_sprite(sprite: str) -> tuple[bool, int]:
     return is_shiny, pokemon_id
 
 
-def prepare_png_image(image_path: str) -> Image:
+def prepare_png_image(image_path: str, 
+                      white_background: bool=True) -> Image:
     img = Image.open(image_path).convert("RGBA")
     img = Resize((96, 96))(img)
     return ToTensor()(img)
@@ -137,6 +140,7 @@ class GenVUnwrappedSprites(Dataset):
         self,
         data_dir: str,
         get_shiny: bool = False,
+        white_background: bool = True,
     ):
         self.data_dir = os.path.join(data_dir, "gen_v_unwrapped_sprites")
         self.sprites_list = os.listdir(self.data_dir)
@@ -153,8 +157,10 @@ class GenVUnwrappedSprites(Dataset):
             for png_file in os.listdir(os.path.join(self.data_dir, sprite)):
                 self.sample_dir.append(os.path.join(self.data_dir, sprite, png_file))
 
+        self.white_background = white_background
+
     def __getitem__(self, idx):
-        return prepare_png_image(self.sample_dir[idx])
+        return prepare_png_image(self.sample_dir[idx], self.white_background)
 
     def __len__(self):
         return len(self.sample_dir)
@@ -165,6 +171,7 @@ class ConditionalGenVUnwrappedSprites(Dataset):
         self,
         data_dir: str,
         get_shiny: bool = False,
+        white_background: bool = True,
     ):
         sprites = os.path.join(data_dir, "gen_v_unwrapped_sprites")
         tabular = os.path.join(data_dir, "poke_tabular.csv")
@@ -201,9 +208,22 @@ class ConditionalGenVUnwrappedSprites(Dataset):
                     )
                 )
 
+        self.white_background = white_background
+
     def __getitem__(self, idx):
         sample = self.sample_dir[idx]
-        return (prepare_png_image(sample[0]), asdict(sample[1]))
+        return (prepare_png_image(sample[0], self.white_background), asdict(sample[1]))
 
     def __len__(self):
         return len(self.sample_dir)
+    
+
+class UnconditionalAnimatedSprites(Dataset):
+    def __init__(
+        self,
+        in_frame_cnt: int,
+        out_frame_cnt: int,
+        data_dir: str,
+        get_shiny: bool = False,
+    ):
+        pass

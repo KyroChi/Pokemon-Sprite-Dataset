@@ -61,7 +61,10 @@ def scrape_bulbapedia(
         if page_data["full_size"] is None:
             continue
         else:
-            pass
+            full_size_filename = os.path.join(
+                save_path, "full_size", f"{str(ii + 1).zfill(4)}_{pokemon['name']}.png"
+            )
+            save_image(page_data["full_size"], full_size_filename)
 
         gen_v_sprites = page_data["gen_v_animated_sprites"]
         for j, sprite_path in enumerate(gen_v_sprites):
