@@ -1,6 +1,6 @@
 # Pokémon Sprite and Image Dataset for Conditional Generation
 
-This dataset contains sprites, animated sprites, Bulbapedia artworks, and tabular data for all of the Pokémon listed on Bulbapdia.
+This dataset contains sprites, animated sprites, Bulbapedia artworks, and tabular data for all of the Pokémon listed on Bulbapdia. I originally built this dataset to [train a diffusion model](https://github.com/KyroChi/pokemon_sprite_generator) to generate new Pokémon sprites.
 
 This dataset is built on the back of the [Bulbapeida](https://bulbapedia.bulbagarden.net/wiki/Main_Page) and the [PokéAPI](https://pokeapi.co/). It aggregates the resources that I required for building a generative diffusion model for Pokémon sprite animations. 
 
@@ -20,8 +20,6 @@ Here are some examples
 - Full Art: ![](/resorces/0001_Bulbasaur.png)
 - Generation V Sprites ![](/resorces/Spr_5b_001.gif)
 - Unwrapped Generation V Sprites ![](/resorces/0.png)
-
-### Unwrapped Generation V Sprites
 
 ## Getting Started
 Clone the repo and then run
