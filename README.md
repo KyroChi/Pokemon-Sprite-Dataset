@@ -2,7 +2,7 @@
 
 [](https://github.com/ShanNicChi/pokemon-sprite-dataset#pok%C3%A9mon-sprite-and-image-dataset-for-conditional-generation)
 
-This dataset contains sprites, animated sprites, Bulbapedia artworks, and tabular data for all of the Pokémon listed on Bulbapdia for the purpose of  [training a diffusion model](https://github.com/KyroChi/pokemon_sprite_generator). Built on the back of the  [Bulbapeida](https://bulbapedia.bulbagarden.net/wiki/Main_Page)  and the  [PokéAPI](https://pokeapi.co/)., this dataset aggregates the resources required for building a generative diffusion model for Pokémon sprite animations.
+This dataset contains sprites, animated sprites, Bulbapedia artworks, and tabular data for all of the Pokémon listed on Bulbapdia for the purpose of  [training a diffusion model](https://github.com/KyroChi/pokemon_sprite_generator). Built on the back of the  [Bulbapeida](https://bulbapedia.bulbagarden.net/wiki/Main_Page)  and the  [PokéAPI](https://pokeapi.co/), this dataset aggregates the resources required for building a generative diffusion model for Pokémon sprite animations.
 
 Note that all of the sprites are owned by Nintendo, so use at your own risk!
 
